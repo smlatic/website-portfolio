@@ -47,22 +47,27 @@
 
 
 						<section id="about">
-							<p>I am an IT student with a passion for data science, machine learning, and artificial intelligence. I am always looking for new challenges and opportunities to learn and grow.</p>
-							<p>Some of my hobbies include coding, reading, and playing video games. I also enjoy hiking and spending time in nature.</p>
+							<p>Ask me anything!</p>
 						</section>
 
+						<br>	
 						<section id="formchat">
-							<form action="greet" method="post">
-								{% for message in get_flashed_messages() %}
-									 <p>{{ message }}</p>
-								 {% endfor %}
-								<br>
-								<input type="text" name="name_input">
-								<br>
-								<input type="submit" value="GREET" id="greet">
-							</form>				
+							<form action="/" method="POST">
+								<input type="text" name="name">
+								<input type="submit" value="Submit">
+							</form>						
 						</section>
 
+
+						{% if response %}
+						<section id="response">
+							<div class="box">
+								<p>{{ response }}</p>
+							</div>
+						</section>
+						{% endif %}
+						
+						
 
 					</header>
 
