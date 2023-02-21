@@ -13,7 +13,6 @@ openai.api_key = os.getenv("API_KEY")
 
 # Initializing the Flask app and server
 app = Flask(__name__)
-server = app.server
 
 
 
