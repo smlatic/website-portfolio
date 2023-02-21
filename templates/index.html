@@ -50,24 +50,42 @@
 							<p>Ask me anything!</p>
 						</section>
 
+
+
+
+
+
+
+
 						<br>	
 						<section id="formchat">
-							<form action="/" method="POST">
-								<input type="text" name="name">
-								<input type="submit" value="Submit">
-							</form>						
+							<form>
+								<input type="text" id="msg" name="msg" required style="color: black; font-weight: bold;">
+								<input type="button" value="Submit" onclick="submitForm()" style="color: black;">
+							</form>		
+							<br>
+							<div id="chatbot-response">
+								<p id="response" style="font-weight: bold;"></p>
+							</div>		
+							<script>
+								function submitForm() {
+										var userText = document.getElementById("msg").value;
+										var xhr = new XMLHttpRequest();
+										xhr.open("GET", '/get?msg=' + userText);
+										xhr.onreadystatechange = function() {
+											if (xhr.readyState === 4 && xhr.status === 200) {
+											document.getElementById("response").innerHTML = xhr.responseText;
+											}
+										};
+										xhr.send();
+								}
+								
+							
+
+							</script>		
 						</section>
 
 
-						{% if response %}
-						<section id="response">
-							<div class="box">
-								<p>{{ response }}</p>
-							</div>
-						</section>
-						{% endif %}
-						
-						
 
 					</header>
 
