@@ -4,6 +4,7 @@ from flask import Flask, render_template, request
 import os
 import openai
 from dotenv import load_dotenv
+from prompts import custom1
 
 # Loading environment variables
 load_dotenv()
@@ -22,9 +23,9 @@ def generate_response(prompt):
     # Using OpenAI to generate response
     completions = openai.Completion.create(
         model="text-davinci-003",
-        prompt=prompt,
+        prompt=custom1 + "\n" + prompt + "\n",
         temperature=0.5,
-        max_tokens=256,
+        max_tokens=80,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0

@@ -53,7 +53,7 @@
 						<br>	
 						<section id="formchat">
 							<form>
-								<input type="text" id="msg" name="msg" required style="color: black; font-weight: bold;">
+								<input type="text" id="msg" name="msg" value="Who are you?" required style="color: black; font-weight: bold;">
 								<input type="button" value="&blacktriangleright;" onclick="submitForm()" style="color: black;">
 							</form>		
 							<br>
@@ -71,6 +71,7 @@
 											}
 										};
 										xhr.send();
+										document.getElementById("msg").value = "";
 								}
 								
 							
