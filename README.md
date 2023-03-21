@@ -15,4 +15,4 @@ The chat bot is using the davinci 003-model. Not as good as ChatGPT, might repla
 
 
 
-![screenshot](assets\website1.png)
+![screenshot](https://github.com/smlatic/website-portfolio/blob/main/assets/website1.png?raw=true)
